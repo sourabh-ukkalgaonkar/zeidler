@@ -11,5 +11,6 @@
 
   <body>
     <%= yield %>
+    <%= link_to 'logout', '/logout', method: :delete if current_user.present? %>
   </body>
 </html>
