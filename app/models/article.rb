@@ -3,4 +3,6 @@ class Article < ApplicationRecord
   enum status: [:draft, :published, :archived]
 
   belongs_to :user
+  has_many :article_categories
+  has_many :categories, through: :article_categories
 end
