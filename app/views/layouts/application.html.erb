@@ -15,9 +15,12 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <% if current_user.present? %>
-            <%= link_to 'logout', '/logout', method: :delete %>
+            <%= link_to 'Logout', '/logout', method: :delete %>
           <% else %>
-            <%= link_to 'login', '/login' if params[:controller] != 'sessions' %>
+            <% unless is_session_or_registration?(params[:controller]) %>
+              <%= link_to 'Login |', '/login'  %>
+              <%= link_to 'Sing Up', '/sign-up' %>
+            <% end %>
           <% end %>
         </li>
       </ul>
