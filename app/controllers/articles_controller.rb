@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: %i[edit update destroy]
 
   def index
-    @articles = Article.search(params[:search], current_user).paginate(per_page: 25, page: params[:page])
+    @articles = Article.search(params[:search], current_user).distinct.paginate(per_page: 25, page: params[:page])
   end
 
   def new

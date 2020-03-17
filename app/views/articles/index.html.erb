@@ -22,7 +22,7 @@
           <td><%= article.title %></td>
           <td><%= article.text&.html_safe %></td>
           <td><%= article.user&.name %></td>
-          <td><%= article.categories.map(&:name).join('') %></td>
+          <td><%= article.categories.map(&:name).join(', ') %></td>
           <% if current_user.present? && article.user == current_user %>
             <td>
               <%= link_to 'Edit', edit_article_path(article.id) %>
