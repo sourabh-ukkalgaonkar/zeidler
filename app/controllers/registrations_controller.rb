@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class RegistrationsController < ApplicationController
-  before_action :check_active_session, only: [:new, :create]
+  before_action :check_active_session, only: %i[new create]
 
   def new
     @user = User.new

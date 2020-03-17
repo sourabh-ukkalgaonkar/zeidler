@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   post 'sign-up', to: 'registrations#create'
 
   get 'welcome/index'
-  root 'welcome#index'
+  root 'articles#index'
+
+  resources :articles
 end

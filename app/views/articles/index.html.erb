@@ -1,0 +1,36 @@
+<div class='container'>
+  <%= render partial: 'search' %>
+  <% if @articles.blank? %>
+    No Articles Found
+  <% else %>
+
+    <table id='myTable' class='table'>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Text</th>
+          <th>Created By</th>
+          <th>Category</th>
+          <% if current_user.present? %>
+            <th>Action</th>
+          <% end %>
+        </tr>
+      </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.text&.html_safe %></td>
+          <td><%= article.user&.name %></td>
+          <td><%= article.categories.map(&:name).join('') %></td>
+          <% if current_user.present? && article.user == current_user %>
+            <td>
+              <%= link_to 'Edit', edit_article_path(article.id) %>
+              <%= link_to 'Delete', article_path(article.id), method: :delete %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+</div>

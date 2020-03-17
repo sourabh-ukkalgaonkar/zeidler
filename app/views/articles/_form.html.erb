@@ -1,0 +1,26 @@
+<%= form_for(@article) do |f| %>
+  <div class='form-group'>
+    <%=  f.label :title %>
+    <%=  f.text_field :title, class: 'form-control', id: 'title', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%=  f.label :text %>
+    <%=  f.text_area :text, class: 'form-control ckeditor', id: 'text' %>
+  </div>
+
+  <div class='form-group'>
+    <%= label_tag :categories %>
+    <br>
+    <% @categories.each do |category| %>
+      <%= check_box_tag "category_ids[]", category.id, @article.categories.map(&:name).include?(category.name) %> <%= category.name %>
+    <% end %>
+  </div>
+
+  <div class='form-group'>
+    <%=  f.label :status %>
+    <%= f.select :status, Article::statuses.keys, {}, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>

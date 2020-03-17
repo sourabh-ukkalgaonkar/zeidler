@@ -16,6 +16,7 @@
         <li class="nav-item">
           <% if current_user.present? %>
             <%= link_to 'Logout', '/logout', method: :delete %>
+            <%= link_to '| New Article', new_article_path %>
           <% else %>
             <% unless is_session_or_registration?(params[:controller]) %>
               <%= link_to 'Login |', '/login'  %>
