@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* I have created the a user with email tester@yopmail.com and password 123456 so you use for a login.
+* I have created the a user with email dalia@altenwerthmohr.org and password 123456 so you use for a login.
 
 * heroku Url https://zeidler-test.herokuapp.com/
 
