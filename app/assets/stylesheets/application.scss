@@ -14,4 +14,26 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
+
+.pagination li {
+  border: 1px solid;
+}
+
+.pagination li span, .pagination li a {
+  margin: 7px;
+}
+
+.pretty th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pretty th .asc {
+  background-image: url(/images/up_arrow.gif);
+}
+
+.pretty th .desc {
+  background-image: url(/images/down_arrow.gif);
+}

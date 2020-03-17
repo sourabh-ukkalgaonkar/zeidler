@@ -33,4 +33,6 @@
       <% end %>
     </tbody>
   <% end %>
+
+  <%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
 </div>
