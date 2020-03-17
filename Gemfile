@@ -71,3 +71,7 @@ gem 'jquery-rails'
 gem 'bootstrap'
 
 gem 'ckeditor_rails'
+
+gem 'faker'
+
+gem 'will_paginate-bootstrap'
