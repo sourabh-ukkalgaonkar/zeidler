@@ -69,3 +69,5 @@ gem 'bcrypt'
 gem 'jquery-rails'
 
 gem 'bootstrap'
+
+gem 'ckeditor_rails'
